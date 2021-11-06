@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Room
+	{{room.name}}
+{% endblock %}
+{% block body %}
+	<h1>Edit Room
+		{{room.name}}</h1>
+
+
+	<turbo-frame id="room" target="_top">
+		<p>
+			{{include('partials/_form.html.twig',{'submit_button_label':'Update Room'})}}
+		</p>
+	</turbo-frame>
+
+	<a href="{{path('app_rooms_show',{'id':room.id})}}">Back</a>
+</p>{% endblock %}

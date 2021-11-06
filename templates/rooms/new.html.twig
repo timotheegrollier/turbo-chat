@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rooms
+{% endblock %}
+{% block body %}
+	<h1>New Room</h1>
+	{{include('partials/_form.html.twig')}}
+
+	<p>
+		<a href="{{path('app_rooms_index')}}">Back</a>
+	</p>
+{% endblock %}

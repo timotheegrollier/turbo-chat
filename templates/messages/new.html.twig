@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Message
+{% endblock %}
+{% block body %}
+	<h1>New Message</h1>
+	<turbo-frame id="new_message">
+		<br>
+		{{form_start(form)}}
+		{{form_widget(form)}}
+		<br>
+		<button formnovalidate type="submit">Send</button>
+		{{form_end(form)}}
+
+	</turbo-frame>
+
+	<p>
+		<a href="{{path('app_rooms_show',{'id':room.id})}}">Back</a>
+	</p>
+{% endblock %}

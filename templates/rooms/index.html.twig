@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rooms
+{% endblock %}
+
+{% block body %}
+
+	<h1>{{pluralize(rooms|length,'Room')}}</h1>
+	{% if rooms is not empty %}
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for room in rooms %}
+					<tr>
+						<td>{{room.name}}</td>
+						<td>
+							<a href="{{path('app_rooms_show',{'id':room.id})}}">Show</a>
+						</td>
+						<td>
+							<a href="{{path('app_rooms_edit',{'id':room.id})}}">Edit</a>
+						</td>
+						<td>
+							<a onclick="event.preventDefault();confirm('Are you sure ?') && document.getElementById('room-deletion-form-{{room.id}}').submit();" href="#">Delete</a>
+
+							<form id="room-deletion-form-{{room.id}}" style="display:none;" method="POST" action="{{path('app_rooms_delete',{'id':room.id})}}">
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit">DELETE</button>
+								<input type="hidden" name="csrf_token" value="{{ csrf_token('room_deletion_' ~ room.id) }}">
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	<p>
+		<a href="{{path('app_rooms_new')}}">New Room</a>
+	</p>
+{% endblock %}
