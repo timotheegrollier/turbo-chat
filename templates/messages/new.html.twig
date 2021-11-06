@@ -6,7 +6,7 @@
 	<h1>New Message</h1>
 	<turbo-frame id="new_message" target="_top">
 		<br>
-		<div class="container col-4">
+		<div class="container col-sm-4 col-8">
 			{{form_start(form)}}
 			{{form_widget(form)}}
 			<br>
@@ -16,6 +16,17 @@
 			{{form_end(form)}}
 		</div>
 
+
+		<script>
+if (document.getElementById("tchat") != null) {
+	const tchat = document.getElementById('tchat')
+	function scrollToBottom() {
+		tchat.scrollTop = tchat.scrollHeight;
+	}
+	scrollToBottom();
+
+}	
+		</script>
 	</turbo-frame>
 
 	<p>

@@ -13,7 +13,7 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('content', TextType::class, ['label' => 'Message:']);
+            ->add('content', TextType::class, ['label' => 'Message:', 'attr' => ['autocomplete' => 'off']]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
