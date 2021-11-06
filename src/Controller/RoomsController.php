@@ -58,7 +58,7 @@ class RoomsController extends AbstractController
      */
     public function edit(Room $room, Request $request, EntityManagerInterface $em)
     {
-        $form = $this->createForm(RoomType::class, $room, ['method' => 'PUT', 'action' => $this->generateUrl('app_rooms_edit', ['id' => $room->getId()])]);
+        $form = $this->createForm(RoomType::class, $room, ['attr' => ['class' => 'd-flex align-items-center justify-content-around container-fluid'], 'method' => 'PUT', 'action' => $this->generateUrl('app_rooms_edit', ['id' => $room->getId()])]);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

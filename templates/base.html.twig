@@ -11,16 +11,16 @@
 
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
-
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 
 			{# <script>
-							document.addEventListener('turbo:before-cache', () => {
-			document.querySelectorAll('.alert-success').forEach(el => el.remove())
-			})
-						</script> #}
+												document.addEventListener('turbo:before-cache', () => {
+								document.querySelectorAll('.alert-success').forEach(el => el.remove())
+								})
+											</script> #}
 		{% endblock %}
+
 	</head>
 	<body>
 		{{include('partials/_flash_messages.html.twig')}}

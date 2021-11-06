@@ -1,8 +1,11 @@
-{{form_start(form)}}
-{{form_widget(form)}}
+<div class="d-flex">
+
+	{{form_start(form)}}
+	{{form_widget(form)}}
 
 
-<button type="submit" formnovalidate>
-	{{submit_button_label ?? 'Create Room'}}
-</button>
-{{form_end(form)}}
+	<button class="mt-3" type="submit" formnovalidate>
+		{{submit_button_label ?? 'Create Room'}}
+	</button>
+	{{form_end(form)}}
+</div>

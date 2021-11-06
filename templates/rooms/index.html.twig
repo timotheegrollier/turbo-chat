@@ -5,9 +5,11 @@
 
 {% block body %}
 
-	<h1>{{pluralize(rooms|length,'Room')}}</h1>
+	<h1 class="text-center">{{pluralize(rooms|length,'Room')}}
+		:
+	</h1>
 	{% if rooms is not empty %}
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -21,13 +23,13 @@
 					<tr>
 						<td>{{room.name}}</td>
 						<td>
-							<a href="{{path('app_rooms_show',{'id':room.id})}}">Show</a>
+							<a class="btn btn-primary" href="{{path('app_rooms_show',{'id':room.id})}}">Show</a>
 						</td>
 						<td>
-							<a href="{{path('app_rooms_edit',{'id':room.id})}}">Edit</a>
+							<a class="btn btn-success" href="{{path('app_rooms_edit',{'id':room.id})}}">Edit</a>
 						</td>
 						<td>
-							<a onclick="event.preventDefault();confirm('Are you sure ?') && document.getElementById('room-deletion-form-{{room.id}}').submit();" href="#">Delete</a>
+							<a class="btn btn-danger" onclick="event.preventDefault();confirm('Are you sure ?') && document.getElementById('room-deletion-form-{{room.id}}').submit();" href="#">Delete</a>
 
 							<form id="room-deletion-form-{{room.id}}" style="display:none;" method="POST" action="{{path('app_rooms_delete',{'id':room.id})}}">
 								<input type="hidden" name="_method" value="DELETE">
