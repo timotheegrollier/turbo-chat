@@ -18,7 +18,7 @@
 			<a class="btn btn-dark" data-turbo-frame="room" href="{{path('app_rooms_edit',{'id':room.id})}}">Edit</a>
 		</turbo-frame>
 	</div>
-</turbo-frame>{# <p>{{ 'now'|date('d/m/Y H:i:s','Europe/Paris') }}</p> #}<div class="container" id="tchat">
+{# <p>{{ 'now'|date('d/m/Y H:i:s','Europe/Paris') }}</p> #}<div class="container" id="tchat">
 
 	{% for message in room.messages %}
 		<div>
@@ -38,4 +38,6 @@
 	<p class="col-6 d-flex justify-content-center">
 		<a class="btn btn-dark" href="{{path('app_rooms_index')}}">Back</a>
 	</p>
-</div>{% endblock %}
+</div>
+<a href="{{path('app_messages_list',{'room':room.id})}}" class="d-none listLink" >list</a>
+{% endblock %}

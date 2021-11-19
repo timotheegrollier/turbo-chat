@@ -15,4 +15,4 @@ import './bootstrap';
 const $ = require('jquery');
 
 
-
+import './home';

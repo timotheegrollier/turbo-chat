@@ -29,7 +29,7 @@
 							<a class="btn btn-success" href="{{path('app_rooms_edit',{'id':room.id})}}">Edit</a>
 						</td>
 						<td>
-							<a class="btn btn-danger" onclick="event.preventDefault();confirm('Are you sure ?') && document.getElementById('room-deletion-form-{{room.id}}').submit();" href="#">Delete</a>
+							<a class="btn btn-danger" onclick="event.preventDefault();confirm('Supprimer la salle ?') && document.getElementById('room-deletion-form-{{room.id}}').submit();" href="#">Delete</a>
 
 							<form id="room-deletion-form-{{room.id}}" style="display:none;" method="POST" action="{{path('app_rooms_delete',{'id':room.id})}}">
 								<input type="hidden" name="_method" value="DELETE">
@@ -47,4 +47,3 @@
 	</p>
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
